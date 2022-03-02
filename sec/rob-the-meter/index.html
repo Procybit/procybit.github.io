@@ -1,47 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Rob The Meter</title>
+    <title>Rob The Meter</title>
 </head>
-<script>
-    function waitLoad() {
-        metersIO = document.getElementById("meters")
-        studsIO = document.getElementById("studs")
-        realCheckIO = document.getElementById("real")
-        if (metersIO && studsIO && realCheckIO) {
-        } else {
-            setTimeout(waitLoad, 300);
+    <script>
+        function waitLoad() {
+            metersIO = document.getElementById("meters")
+            studsIO = document.getElementById("studs")
+            realCheckIO = document.getElementById("real")
+            if (metersIO && studsIO && realCheckIO) {
+            } else {
+                setTimeout(waitLoad, 300);
+            }
         }
-    }
-    waitLoad();
-    function updateStuds() {
-        function roundp(x) {
-            return Math.round(x * 1000) / 1000
+        waitLoad();
+        function updateStuds() {
+            function roundp(x) {
+                return Math.round(x * 1000) / 1000
+            }
+            if (realCheckIO.checked) {
+                studsIO.value = roundp(Number(metersIO.value) * 5.7)
+            } else {
+                studsIO.value = roundp(Number(metersIO.value) * 20)
+            }
         }
-        if (realCheckIO.checked) {
-            studsIO.value = roundp(Number(metersIO.value) * 5.7)
-        } else {
-            studsIO.value = roundp(Number(metersIO.value) * 20)
+        function updateMeters() {
+            function roundp(x) {
+                return Math.round(x * 1000) / 1000
+            }
+            if (realCheckIO.checked) {
+                metersIO.value = roundp(Number(studsIO.value) / 5.7)
+            } else {
+                metersIO.value = roundp(Number(studsIO.value) / 20)
+            }
         }
-    }
-    function updateMeters() {
-        function roundp(x) {
-            return Math.round(x * 1000) / 1000
+        function realModeInit() {
+            metersIO.value = 1
+            updateStuds()
         }
-        if (realCheckIO.checked) {
-            metersIO.value = roundp(Number(studsIO.value) / 5.7)
-        } else {
-            metersIO.value = roundp(Number(studsIO.value) / 20)
-        }
-    }
-    function realModeInit() {
         metersIO.value = 1
+        realCheckIO.checked = true
         updateStuds()
-    }
-    metersIO.value = 1
-    realCheckIO.checked = true
-    updateStuds()
-</script>
+    </script>
 <body>
     <h1>Rob The Meter <sup>v1.0.1</sup></h1>
     <h2><i>Meters ↔ Roblox Studs</i> converter</h2>
