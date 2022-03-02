@@ -35,25 +35,23 @@
             }
         }
         function realModeInit() {
-            metersIO.value = 1
+            metersIO.value = 0
             updateStuds()
         }
-        metersIO.value = 1
-        realCheckIO.checked = true
         updateStuds()
     </script>
 <body>
-    <h1>Rob The Meter <sup>v1.0.1</sup></h1>
+    <h1>Rob The Meter <sup>v1.0.2</sup></h1>
     <h2><i>Meters ↔ Roblox Studs</i> converter</h2>
     <form>
         <label for="meters">Meters:</label><br>
         <input type="text" id="meters" name="meters" value="0" oninput="updateStuds()"><br>
         <label for="studs">Studs:</label><br>
         <input type="text" id="studs" name="studs" value="0" oninput="updateMeters()"><br><br>
-        <input type="checkbox" id="real" name="real" checked=false oninput="realModeInit()">
+        <input type="checkbox" id="real" name="real" checked=true oninput="realModeInit()">
         <label for="vehicle3">Real mode*</label>
     </form>
-    <p>*<i>Real mode</i> uses the condition that the real human is 5.7 times bigger than the Roblox player.</p>
+    <p>*<i>Real mode</i> uses the condition that the real human is 5.7 times bigger than the Roblox player (calculated by me personally).</p>
     <p style="position: absolute;bottom: 0;left: 1em;"><strong>Contact E-Mail: </strong>kyleusnaff@gmail.com</p>
     <p style="position: absolute;bottom: 0;right: 1em;">© 2022 Leon Shepelev</p>
 </body>
