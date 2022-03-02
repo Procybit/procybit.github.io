@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rob The Meter</title>
+</head>
+<script>
+    function waitLoad() {
+        metersIO = document.getElementById("meters")
+        studsIO = document.getElementById("studs")
+        realCheckIO = document.getElementById("real")
+        if (metersIO && studsIO && realCheckIO) {
+        } else {
+            setTimeout(waitLoad, 300);
+        }
+    }
+    waitLoad();
+    function updateStuds() {
+        function roundp(x) {
+            return Math.round(x * 1000) / 1000
+        }
+        if (realCheckIO.checked) {
+            studsIO.value = roundp(Number(metersIO.value) * 5.7)
+        } else {
+            studsIO.value = roundp(Number(metersIO.value) * 20)
+        }
+    }
+    function updateMeters() {
+        function roundp(x) {
+            return Math.round(x * 1000) / 1000
+        }
+        if (realCheckIO.checked) {
+            metersIO.value = roundp(Number(studsIO.value) / 5.7)
+        } else {
+            metersIO.value = roundp(Number(studsIO.value) / 20)
+        }
+    }
+    function realModeInit() {
+        metersIO.value = 1
+        updateStuds()
+    }
+    metersIO.value = 1
+    realCheckIO.checked = true
+    updateStuds()
+</script>
+<body>
+    <form>
+        <label for="meters">Meters:</label><br>
+        <input type="text" id="meters" name="meters" value="0" oninput="updateStuds()"><br>
+        <label for="studs">Studs:</label><br>
+        <input type="text" id="studs" name="studs" value="0" oninput="updateMeters()"><br><br>
+        <input type="checkbox" id="real" name="real" checked=false oninput="realModeInit()">
+        <label for="vehicle3">Real</label>
+      </form>
+</body>
+</html>
