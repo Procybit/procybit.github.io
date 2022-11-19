@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Rob The Meter</title>
-</head>
-    <script>
-        function waitLoad() {
-            metersIO = document.getElementById("meters")
-            studsIO = document.getElementById("studs")
-            realCheckIO = document.getElementById("real")
-            if (metersIO && studsIO && realCheckIO) {
-            } else {
-                setTimeout(waitLoad, 0);
-            }
-        }
+	<head>
+		<title>Rob The Meter</title>
+	</head>
+		<script>
+			function waitLoad() {
+				metersIO = document.getElementById("meters")
+				studsIO = document.getElementById("studs")
+				realCheckIO = document.getElementById("real")
+				if (metersIO && studsIO && realCheckIO) {
+				} else {
+					setTimeout(waitLoad, 0);
+				}
+			}
 
-        waitLoad();  // preload
+			waitLoad();  // preload
 
-        function roundp(x) {
-                const precision = 4
-                return Math.round(x * 10 ** precision) / 10 ** precision
-            }
+			function roundp(x) {
+					const precision = 4
+					return Math.round(x * 10 ** precision) / 10 ** precision
+				}
 
-        function updateStuds() {
-            if (realCheckIO.checked) {
-                studsIO.value = roundp(Number(metersIO.value) * 5.7)
-            } else {
-                studsIO.value = roundp(Number(metersIO.value) * 20)
-            }
-        }
+			function updateStuds() {
+				if (realCheckIO.checked) {
+					studsIO.value = roundp(Number(metersIO.value) * 5.7)
+				} else {
+					studsIO.value = roundp(Number(metersIO.value) * 20)
+				}
+			}
 
-        function updateMeters() {
-            if (realCheckIO.checked) {
-                metersIO.value = roundp(Number(studsIO.value) / 5.7)
-            } else {
-                metersIO.value = roundp(Number(studsIO.value) / 20)
-            }
-        }
+			function updateMeters() {
+				if (realCheckIO.checked) {
+					metersIO.value = roundp(Number(studsIO.value) / 5.7)
+				} else {
+					metersIO.value = roundp(Number(studsIO.value) / 20)
+				}
+			}
 
-        function realModeInit() {  // when real mode switched
-            metersIO.value = 0
-            updateStuds()
-        }
+			function realModeInit() {  // when real mode switched
+				metersIO.value = 0
+				updateStuds()
+			}
 
-        updateStuds()
-    </script>
-<body>
-    <h1>Rob The Meter <sup>v1.1.2</sup></h1>
-    <h2><i>Meters ↔ Roblox Studs</i> converter</h2>
-    <form>
-        <label for="meters">Meters:</label><br>
-        <input type="text" id="meters" name="meters" value="0" oninput="updateStuds()" onchange="metersIO.value = roundp(Number(metersIO.value))"><br>
-        <label for="studs">Studs:</label><br>
-        <input type="text" id="studs" name="studs" value="0" oninput="updateMeters()" onchange="studsIO.value = roundp(Number(studsIO.value))"><br><br>
-        <input type="checkbox" id="real" name="real" checked=true oninput="realModeInit()">
-        <label for="checkbox">Real mode*</label>
-    </form>
-    <p>*<i>Real mode</i> uses the condition that the real human is 5.7 times bigger than the Roblox player (calculated by me personally).</p>
-    <p style="position: absolute;bottom: 0;left: 1em;"><strong>Contact e-mail:</strong> <a href="mailto:kyleusnaff@gmail.com" target="_blank">kyleusnaff@gmail.com</a></p>
-    <p style="position: absolute;bottom: 0;right: 1em;">© 2022 Leon Shepelev</p>
-</body>
+			updateStuds()
+		</script>
+	<body>
+		<h1>Rob The Meter <sup>v1.1.2</sup></h1>
+		<h2><i>Meters ↔ Roblox Studs</i> converter</h2>
+		<form>
+			<label for="meters">Meters:</label><br>
+			<input type="text" id="meters" name="meters" value="0" oninput="updateStuds()" onchange="metersIO.value = roundp(Number(metersIO.value))"><br>
+			<label for="studs">Studs:</label><br>
+			<input type="text" id="studs" name="studs" value="0" oninput="updateMeters()" onchange="studsIO.value = roundp(Number(studsIO.value))"><br><br>
+			<input type="checkbox" id="real" name="real" checked=true oninput="realModeInit()">
+			<label for="checkbox">Real mode*</label>
+		</form>
+		<p>*<i>Real mode</i> uses the condition that the real human is 5.7 times bigger than the Roblox player (calculated by me personally).</p>
+		<p style="position: absolute;bottom: 0;left: 1em;"><strong>Contact e-mail:</strong> <a href="mailto:kyleusnaff@gmail.com" target="_blank">kyleusnaff@gmail.com</a></p>
+		<p style="position: absolute;bottom: 0;right: 1em;">© 2022 Leon Shepelev</p>
+	</body>
 </html>
