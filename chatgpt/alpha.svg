@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+    <!-- Draw the background rectangle with a 2-pixel black stroke -->
+    <rect x="0" y="0" width="200" height="200" fill="gray" stroke="black" stroke-width="2" />
+
+    <!-- Draw the protons and neutrons in the alpha particle -->
+    <circle cx="93" cy="108" r="12" stroke="black" stroke-width="2" fill="red" />
+    <circle cx="113" cy="108" r="12" stroke="black" stroke-width="2" fill="black" />
+    <circle cx="93" cy="87" r="12" stroke="black" stroke-width="2" fill="black" />
+    <circle cx="113" cy="87" r="12" stroke="black" stroke-width="2" fill="red" />
+
+    <!-- Draw labels for the protons and neutrons -->
+    <text x="90" y="113" font-size="12" fill="white">p</text>
+    <text x="110" y="113" font-size="12" fill="white">n</text>
+    <text x="90" y="89" font-size="12" fill="white">n</text>
+    <text x="110" y="89" font-size="12" fill="white">p</text>
+
+    <!-- Draw the text for "α-particle by ChatGPT" -->
+    <text x="28" y="50" font-size="16" fill="white">α-particle by ChatGPT</text>
+</svg>
