@@ -17,15 +17,32 @@
             border: 1px solid #ccc;
             border-radius: 10px;
         }
+
+        .image-gallery figcaption {
+            text-align: center;
+            margin-top: 5px;
+        }
     </style>
 </head>
 <body>
     <h1>ChatGPT content gallery</h1>
     <div class="image-gallery">
-        <img src="alpha.svg">
-        <img src="beta.svg">
-        <img src="gamma.svg">
-        <img src="neutrino.svg">
+        <figure>
+            <img src="alpha.svg">
+            <figcaption>α-particle</figcaption>
+        </figure>
+        <figure>
+            <img src="beta.svg" alt="Beta Image">
+            <figcaption>β-particle</figcaption>
+        </figure>
+        <figure>
+            <img src="gamma.svg" alt="Gamma Image">
+            <figcaption>γ-particle</figcaption>
+        </figure>
+        <figure>
+            <img src="neutrino.svg" alt="Neutrino Image">
+            <figcaption>Neutrino</figcaption>
+        </figure>
         
         <!-- Add more images here as needed -->
     </div>
