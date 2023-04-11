@@ -15,7 +15,7 @@
     <circle cx="100" cy="100" r="12" stroke="black" stroke-width="2" fill="white" filter="url(#glow)" />
 
     <!-- Draw labels for the gamma particle -->
-    <text x="93" y="108" font-size="12" fill="black">γ</text>
+    <text x="97" y="101" font-size="12" fill="black">γ</text>
 
     <!-- Draw the text for "γ-particle by ChatGPT" -->
     <text x="28" y="50" font-size="16" fill="white">γ-particle by ChatGPT</text>
