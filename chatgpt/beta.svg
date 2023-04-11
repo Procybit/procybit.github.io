@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+    <!-- Draw the background rectangle with a 2-pixel black stroke -->
+    <rect x="0" y="0" width="200" height="200" fill="gray" stroke="black" stroke-width="2" />
+
+    <!-- Draw the electron in the beta particle -->
+    <circle cx="103" cy="98" r="12" stroke="black" stroke-width="2" fill="yellow" />
+
+    <!-- Draw labels for the electron -->
+    <text x="100" y="103" font-size="12" fill="black">e</text>
+
+    <!-- Draw the text for "β-particle by ChatGPT" -->
+    <text x="28" y="50" font-size="16" fill="white">β-particle by ChatGPT</text>
+</svg>
