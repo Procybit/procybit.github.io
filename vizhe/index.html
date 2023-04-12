@@ -29,9 +29,9 @@
 			// Создание массивов символов алфавита и входного текста
 			var alphabetArr;
 			if (alphabet === 'en') {
-				alphabetArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'.split('');
+				alphabetArr = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 			} else if (alphabet === 'ru') {
-				alphabetArr = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯабвгдеёжзийклмнопрстуфхцчшщъыьэюя'.split('');
+				alphabetArr = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
 			}
 
 			var inputArr = input.split('');
@@ -45,13 +45,13 @@
 
 				if (alphabetArr.indexOf(inputChar) !== -1) {
 					var inputIndex = alphabetArr.indexOf(inputChar);
-					// var keyIndex = alphabetArr.indexOf(keyChar);
+					var keyCharIndex = alphabetArr.indexOf(keyChar);
 					var resultIndex;
 
 					if (mode === 'encrypt') {
-						resultIndex = (inputIndex + keyIndex) % alphabetArr.length;
+						resultIndex = (inputIndex + keyCharIndex) % alphabetArr.length;
 					} else if (mode === 'decrypt') {
-						resultIndex = (inputIndex - keyIndex + alphabetArr.length) % alphabetArr.length;
+						resultIndex = (inputIndex - keyCharIndex + alphabetArr.length) % alphabetArr.length;
 					}
 
 					var resultChar = alphabetArr[resultIndex];
