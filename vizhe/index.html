@@ -33,36 +33,29 @@
 			} else if (alphabet === 'ru') {
 				alphabetArr = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ'.split('');
 			}
-
 			var inputArr = input.split('');
-
 			// Зашифрование или расшифрование в зависимости от режима (encrypt/decrypt)
 			var resultArr = [];
 			var keyIndex = 0;
 			for (var i = 0; i < inputArr.length; i++) {
 				var inputChar = inputArr[i];
-				var keyChar = key[keyIndex % key.length];
-
-				if (alphabetArr.indexOf(inputChar) !== -1) {
-					var inputIndex = alphabetArr.indexOf(inputChar);
-					var keyCharIndex = alphabetArr.indexOf(keyChar);
+				if (alphabetArr.includes(inputChar.toUpperCase())) {
+					var keyChar = key[keyIndex % key.length];
+					var inputIndex = alphabetArr.indexOf(inputChar.toUpperCase());
+					var keyCharIndex = alphabetArr.indexOf(keyChar.toUpperCase());
 					var resultIndex;
-
 					if (mode === 'encrypt') {
 						resultIndex = (inputIndex + keyCharIndex) % alphabetArr.length;
 					} else if (mode === 'decrypt') {
 						resultIndex = (inputIndex - keyCharIndex + alphabetArr.length) % alphabetArr.length;
 					}
-
 					var resultChar = alphabetArr[resultIndex];
-
 					// Сохранение регистра и знаков препинания
 					if (inputChar === inputChar.toUpperCase()) {
 						resultArr.push(resultChar.toUpperCase());
 					} else {
 						resultArr.push(resultChar.toLowerCase());
 					}
-
 					keyIndex++;
 				} else {
 					// Сохранение знаков препинания и пробелов
