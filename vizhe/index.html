@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Калькулятор шифра Виженера</title>
+    <title>Vigenère cipher</title>
 	<script>
         function encrypt() {
             var plaintext = document.getElementById('plaintext').value;
@@ -76,23 +76,25 @@
     </script>
 </head>
 <body>
-    <h1>Калькулятор шифра Виженера</h1>
-    <label for="plaintext">Исходный текст:</label><br>
+    <h1>Vigenère cipher</h1>
+    <label for="plaintext">Decrypted:</label><br>
     <textarea id="plaintext" rows="4" cols="50"></textarea><br>
-    <label for="key">Ключ:</label><br>
+    <label for="key">Key:</label><br>
     <input type="text" id="key"><br>
-    <label for="ciphertext">Зашифрованный текст:</label><br>
+    <label for="ciphertext">Encrypted:</label><br>
     <textarea id="ciphertext" rows="4" cols="50"></textarea><br>
-    <label for="alphabet">Алфавит:</label><br>
+    <label for="alphabet">Alphabet:</label><br>
     <select id="alphabet">
-        <option value="en">Английский</option>
+        <option value="en">English</option>
         <option value="ru">Русский</option>
     </select><br>
-    <button onclick="encrypt()">Зашифровать</button>
-    <button onclick="decrypt()">Расшифровать</button>
-    <button onclick="clearFields()">Очистить</button>
+    <button onclick="encrypt()">Encrypt</button>
+    <button onclick="decrypt()">Decrypt</button>
+    <button onclick="clearFields()">Clear</button>
   
   <!--standard-->
   <a href="/">Home...</a>
+  <p style="position: absolute;bottom: 0;left: 1em;"><strong>Contact e-mail:</strong> <a href="mailto:kyleusnaff@gmail.com" target="_blank">kyleusnaff@gmail.com</a></p>
+  <p style="position: absolute;bottom: 0;right: 1em;">© 2023 Leon Shepelev</p>
 </body>
 </html>
