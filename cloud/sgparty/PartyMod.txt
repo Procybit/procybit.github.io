@@ -1,0 +1,9 @@
+type=default
+ne-sovmest=none;
+version/mod=0.0.0
+version/loader=0.0.0
+
+del/sprite пульки
+add/sprite https://raw.githubusercontent.com/Procybit/procybit.github.io/master/cloud/sgparty/bullets.sprite3
+del/sprite Зомби
+add/sprite https://raw.githubusercontent.com/Procybit/procybit.github.io/master/cloud/sgparty/zombie.sprite3
